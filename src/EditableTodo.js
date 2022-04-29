@@ -12,7 +12,7 @@ import TodoForm from "./TodoForm";
  * EditableTodoList -> EditableTodo -> { Todo, TodoForm }
  */
 
-function EditableTodo({ todo, remove, update }) {
+function EditableTodo({ todo, remove, update, finishTodo }) {
   const [formShowing, setFormShowing] = useState(false);
   /** Toggle if this is being edited */
   function toggleEdit() {
@@ -33,26 +33,27 @@ function EditableTodo({ todo, remove, update }) {
 
   return (
     <div className="EditableTodo">
-
-      {formShowing ?
-        <TodoForm initialValues={todo} handleSave={handleSave}/>
-        :
+      {formShowing ? (
+        <TodoForm initialValues={todo} handleSave={handleSave} />
+      ) : (
         <div className="mb-3">
           <div className="float-end text-sm-end">
             <button
               className="EditableTodo-toggle btn-link btn btn-sm"
-              onClick={toggleEdit}>
+              onClick={toggleEdit}
+            >
               Edit
             </button>
             <button
               className="EditableTodo-delBtn btn-link btn btn-sm text-danger"
-              onClick={handleDelete}>
+              onClick={handleDelete}
+            >
               Del
             </button>
           </div>
-          <Todo todo={todo}/>
+          <Todo todo={todo} finishTodo={finishTodo} />
         </div>
-      }
+      )}
     </div>
   );
 }

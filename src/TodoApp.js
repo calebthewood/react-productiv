@@ -20,7 +20,7 @@ function TodoApp({ initialTodos }) {
   const [todos, setTodos] = useState(initialTodos);
   /** add a new todo to list */
   function create(newTodo) {
-    let todo = { ...newTodo, id: uuid() };
+    let todo = { ...newTodo, id: uuid(), isDone: false };
     setTodos((todos) => [...todos, todo]);
   }
 
@@ -36,12 +36,26 @@ function TodoApp({ initialTodos }) {
     setTodos(() => todos.filter((todo) => todo.id !== id));
   }
 
+  function finishTodo(todoDone) {
+    console.log(todoDone);
+    todoDone.isDone = !todoDone.isDone;
+
+    setTodos(() =>
+      todos.map((todo) => (todo.id === todoDone.id ? todoDone : todo))
+    );
+  }
+
   return (
     <main className="TodoApp">
       <div className="row">
         <div className="col-md-6">
           {todos.length > 0 ? (
-            <EditableTodoList todos={todos} update={update} remove={remove} />
+            <EditableTodoList
+              todos={todos}
+              update={update}
+              remove={remove}
+              finishTodo={finishTodo}
+            />
           ) : (
             <span className="text-muted">You have no todos.</span>
           )}
@@ -51,7 +65,7 @@ function TodoApp({ initialTodos }) {
           {todos.length > 0 && (
             <section className="mb-4">
               <h3>Top Todo</h3>
-              <TopTodo todos={todos} />
+              <TopTodo todos={todos} finishTodo={finishTodo} />
             </section>
           )}
 

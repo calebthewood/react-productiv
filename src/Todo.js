@@ -8,11 +8,25 @@ import React from "react";
  * { EditableTodo, TopTodo } -> Todo
  **/
 
-function Todo({ todo }) {
+function Todo({ todo, finishTodo }) {
   return (
     <div className="Todo">
-      <div>
-        <b>{todo.title}</b> <small>{todo.priority}</small>
+      <div onClick={() => finishTodo(todo)}>
+        {todo.isDone ? (
+          <>
+            <b>
+              <s>{todo.title}</s>
+            </b>
+            <small>
+              <s> {todo.priority}</s>
+            </small>
+          </>
+        ) : (
+          <>
+            <b>{todo.title}</b>
+            <small> {todo.priority}</small>
+          </>
+        )}
       </div>
       <div>
         <small>{todo.description}.</small>
