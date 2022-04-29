@@ -57,7 +57,7 @@ function TodoApp({ initialTodos }) {
 
           <section>
             <h3 className="mb-3">Add Nü</h3>
-            <TodoForm create={create} handleSave={create} />
+            <TodoForm handleSave={create} />
           </section>
         </div>
       </div>
