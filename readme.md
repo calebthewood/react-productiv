@@ -17,13 +17,11 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
-<h3 align="center">Prøductïv</h3>
+<h1 align="center">Prøductïv</h1>
 
   <p align="center">
     Prøductïv is a scandinavian themed todo application with a nifty little quote generator, and priority settings.
@@ -32,6 +30,11 @@
   </p>
 </div>
 
+
+
+<img src="./public/ScreenShot-2022-06-29.png" alt="screen shot" width="500" align="center">
+
+<hr>
 
 
 <!-- TABLE OF CONTENTS -->
@@ -69,8 +72,10 @@
 
 ### Built With
 
-* [React](https://reactjs.org/)
-* [Express](https://expressjs.com/)
+* [ReactJS](https://reactjs.org/)
+* [React-DOM](https://reactjs.org/docs/react-dom.html)
+* [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+* [AXIOS](#)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -80,18 +85,7 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Dev environment uses a local postgres database. Site is deployed with a postgres hobby db.
-
-### Prerequisites
-
-To run locally, install psql for Postgres
-- Instructions for HomeBrew on ios
-  ```sh
-    $ brew install postgresql
-    $ brew pin postgresql
-    $ brew services start postgresql
-    $ psql CREATE DATABASE jobly
-  ```
+This is a front-end application. State is maintained by react as you interact with the application, but a refresh will revert all todos back to the default state.
 
 
 ### Installation
@@ -99,7 +93,7 @@ To run locally, install psql for Postgres
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/calebthewood/express-jobly
+   git clone https://github.com/calebthewood/react-productiv
    ```
 2. Install NPM packages
    ```sh
@@ -107,11 +101,11 @@ To run locally, install psql for Postgres
    ```
 3.  Run in Development mode
     ```sh
-    run start
+    npm start
     ```
-4. Run Jest Tests
+4. Run React Test Library Tests
     ```
-    run test
+    npm test
     ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -120,11 +114,12 @@ To run locally, install psql for Postgres
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Generate Random Password for one time use.
-- [ ] Implement PostgreSQL's enum type for 'state' column
-- [ ] Add technologies/skills for Jobs (many-to-many)
+- [ ] Connect postgres DB to persist data
+- [ ] Improve 'nu quote' button
+- [ ] Update fake copyright
+- [ ] Update edit/delete buttons
 
-See the [open issues](https://github.com/calebthewood/express-jobly/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/calebthewood/react-productiv/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -150,16 +145,14 @@ Don't forget to give the project a star! Thanks again!
 
 Questions? - I'm on twitter [@calebthewood](https://twitter.com/calebthewood) - or email: calebwood.cs@gmail.com
 
-Project Link: [https://github.com/calebthewood/personal-site](https://github.com/calebthewood/personal-site)
+Check out my [personal site!](https://www.calebwood.dev/)
 
 
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [Rithm School](https://www.rithmschool.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -167,10 +160,10 @@ Project Link: [https://github.com/calebthewood/personal-site](https://github.com
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/calebthewood/express-jobly.svg?style=for-the-badge
-[contributors-url]: https://github.com/calebthewood/express-jobly/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/calebthewood/react-productiv.svg?style=for-the-badge
+[contributors-url]: https://github.com/calebthewood/react-productiv/graphs/contributors
 
-[issues-shield]: https://img.shields.io/github/issues/calebthewood/express-jobly.svg?style=for-the-badge
-[issues-url]: https://github.com/calebthewood/express-jobly/issues
+[issues-shield]: https://img.shields.io/github/issues/calebthewood/react-productiv.svg?style=for-the-badge
+[issues-url]: https://github.com/calebthewood/react-productiv/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/caleb-wood-440b37168
