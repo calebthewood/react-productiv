@@ -14,16 +14,11 @@ function QuoteApp() {
     setQuote(quote);
   }
 
-  const btnStyle = {
-    border: "1px solid white",
-    color: "white",
-    backgroundColor: "transparent"
-  }
 
   return (
     <div className="container">
       {quoteShowing && <Quote quote={quote} />}
-      <button onClick={showNewQuote} style={btnStyle}>
+      <button onClick={showNewQuote} className="quoteBtn">
         {quoteShowing ? "Nu quote" : "Click here for an inspirational quote!"}{" "}
       </button>
     </div>
