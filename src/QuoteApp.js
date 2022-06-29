@@ -13,10 +13,17 @@ function QuoteApp() {
     const quote = data.data.quote;
     setQuote(quote);
   }
+
+  const btnStyle = {
+    border: "1px solid white",
+    color: "white",
+    backgroundColor: "transparent"
+  }
+
   return (
     <div className="container">
       {quoteShowing && <Quote quote={quote} />}
-      <button onClick={showNewQuote}>
+      <button onClick={showNewQuote} style={btnStyle}>
         {quoteShowing ? "Nu quote" : "Click here for an inspirational quote!"}{" "}
       </button>
     </div>
